@@ -9,10 +9,6 @@ const start_server = async () => {
 
   if (database_connected) {
 
-    const test = await connect.execute("SELECT * FROM events")
-
-    console.log(test)
-
     app.listen(port, () => {
       // tslint:disable-next-line:no-console
       console.log(`Server started at http://localhost:${port}`);
