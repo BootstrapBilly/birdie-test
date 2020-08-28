@@ -20,6 +20,8 @@ eventsController.get('/all_events', async (_, res) => {
 });
 
 eventsController.post('/single_recipient_events', async (req, res) => {
+
+    console.log(req.body)
     
     const care_recipient_id = req.body.care_recipient_id//extract the care recipient id from the body
 
