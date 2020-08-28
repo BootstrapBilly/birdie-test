@@ -1,7 +1,7 @@
 import app from '../src/application'
 import * as request from 'supertest';
 
-describe('The endpoint returns events', () => {
+describe('The get all events endpoint returns events', () => {
   it('Fetch the GET=> /all_events endpoint', async () => {
     await request(app)
       .get('/all_events')
@@ -13,7 +13,7 @@ describe('The endpoint returns events', () => {
   })
 });
 
-describe('The endpoint returns events', () => {
+describe('The get specific patient events endpoint returns events', () => {
   it('Fetch the POST=> /single_recipient_events endpoint', async () => {
     await request(app)
       .post('/single_recipient_events')

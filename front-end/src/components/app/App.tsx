@@ -7,6 +7,7 @@ import { Dispatch } from 'redux';
 import Title from '@App/components/Title';
 import Logo from '@App/components/Logo';
 import SubTitle from '@App/components/SubTitle';
+import { FetchButton } from '@App/components/FetchButton';
 
 const LogoUrl = require('../../assets/images/logo-birdie.svg');
 
@@ -32,7 +33,7 @@ const AppContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 `;
@@ -48,16 +49,17 @@ class App extends React.Component<AppProps, AppState> {
         <GlobalStyle />
         <AppContainer>
           <Logo src={LogoUrl} />
-          <Title>Welcome to the birdie test</Title>
-          <SubTitle>Best of luck!</SubTitle>
+          <Title>Welcome to the care recipient information hub</Title>
+          <SubTitle>Viewing records for recipient : df50cac5-293c-490d-a06c-ee26796f850d</SubTitle>
+          <FetchButton fetchRecords={alert} />
         </AppContainer>
       </>
     );
   }
 }
 
-const mapStateToProps = (state: RootState, ownProps: object) => {};
+const mapStateToProps = (state: RootState, ownProps: object) => { };
 
-const mapDispatchToProps = (dispatch: Dispatch<RootState>) => {};
+const mapDispatchToProps = (dispatch: Dispatch<RootState>) => { };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

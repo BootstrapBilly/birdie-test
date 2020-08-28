@@ -5,8 +5,8 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json())//set up the body parser
 app.use(pingController);
-app.use(eventsController);
+app.use(eventsController);//use the events middleware
 
 export default app;
