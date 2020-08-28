@@ -38,8 +38,8 @@ export const Home = () => {
 
         <div className={classes.container}>
             <Logo />
-            <Title text="Viewing records for care recipient" />
-            <SubTitle text="ad3512a6-91b1-4d7d-a005-6f8764dd0111" />
+            <Title text="Viewing records for Annie" />
+            <SubTitle text="ID : ad3512a6-91b1-4d7d-a005-6f8764dd0111" />
            {response && response.data.message === "Records fetched successfully" && response.data.events.map((event:any) => <Row data={event}/>)}
         </div>
     )
