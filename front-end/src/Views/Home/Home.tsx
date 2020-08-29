@@ -86,7 +86,7 @@ export const Home = () => {
 
             <Logo />
             <Title text="Viewing records for Annie" />
-            <SubTitle text="ID : ad3512a6-91b1-4d7d-a005-6f8764dd0111" />
+            <SubTitle text="ID : e3e2bff8-d318-4760-beea-841a75f00227" />
 
             <SortBy active_filter={current_filter} handle_select={(text: string) => handle_filter(text)} />
 
@@ -101,7 +101,7 @@ export const Home = () => {
                         marginLeft: "-20px",
                     }}>
 
-                    {events_to_display.map((event: any) => <Row data={event} key={event} />)}
+                    {events_to_display.map((event: any) => <Row data={event} key={event.id} />)}
 
                 </Masonry>
 

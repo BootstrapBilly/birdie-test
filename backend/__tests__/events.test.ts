@@ -27,3 +27,17 @@ describe('The get specific patient events endpoint returns events', () => {
       });
   })
 });
+
+describe('The get specific patient events endpoint returns nothing if a wrong id is supplied', () => {
+  it('Fetch the POST=> /single_recipient_events endpoint', async () => {
+    await request(app)
+      .post('/single_recipient_events')
+      .send({
+        "care_recipient_id":"non existant"  
+      })
+      .expect(404)
+      .expect(function(res) {
+        expect(res.body.message).toContain("No records found")
+      });
+  })
+});

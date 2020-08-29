@@ -12,9 +12,6 @@ type Props = {
 
 export const Row = ({ data }: Props) => {
 
-
-    if(data.event_type === "alert_raised") console.log(data)
-
     return (
 
         <div className={classes.container}>
