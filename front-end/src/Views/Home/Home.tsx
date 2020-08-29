@@ -43,34 +43,38 @@ export const Home = () => {
         // eslint-disable-next-line
     }, [])
 
-    const handle_filter = (type: string) => {
+    //_functions
+    const handle_filter = (type: string) => {//this function is called whenever a filter is clicked to change the sort criteria
 
-        dispatch(set_filter(type))
+        dispatch(set_filter(type))//update the current filter in redux
 
-        if (type === "none") { return set_events_to_display(response.data.events) }
-        if (type === "type") {
+        if (type === "type") {//if they clicked the type button
 
+            //sort the events based on type
             const sorted_by_type = response.data.events.sort((a: any, b: any) => (a.payload.event_type > b.payload.event_type) ? 1 : -1)
-
+            //then set the new sorted events to display
             return set_events_to_display(sorted_by_type)
         }
-        if (type === "date") {
 
-            const sorted_by_type = response.data.events.sort((a: any, b: any) => (a.payload.timestamp > b.payload.timestamp) ? 1 : -1)
+        if (type === "date") {//if they clicked on the date button
 
-            return set_events_to_display(sorted_by_type)
+            //sort the events based on date
+            const sorted_by_date = response.data.events.sort((a: any, b: any) => (a.payload.timestamp > b.payload.timestamp) ? 1 : -1)
+            //then set the new sorted events to display
+            return set_events_to_display(sorted_by_date)
         }
 
     }
 
-    useEffect(() => {
+    useEffect(() => {//this effect is called whenever a new response is received, it is used to set the events to display
 
-        if (response && response.data.events) {
+        if (response && response.data.events) {//if there is a response and events are present
 
-            const sorted_by_type = response.data.events.sort((a: any, b: any) => (a.payload.timestamp > b.payload.timestamp) ? 1 : -1)
+            //sort the events by date
+            const sorted_by_date = response.data.events.sort((a: any, b: any) => (a.payload.timestamp > b.payload.timestamp) ? 1 : -1)
 
-            return set_events_to_display(sorted_by_type)
-
+            //then set them to be displayed
+            return set_events_to_display(sorted_by_date)
 
         }
 
