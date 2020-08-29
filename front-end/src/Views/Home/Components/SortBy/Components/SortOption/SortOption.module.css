@@ -1,0 +1,27 @@
+.container{
+    width:70px;
+    height: 70px;
+    background-color: white;
+    box-shadow: 1px 1px 3px 1px rgba(128, 128, 128, 0.342);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 15px 0;
+}
+
+.container:hover{
+    cursor: pointer;
+}
+
+.text{
+
+    position: absolute;
+    bottom: -22px;
+}
+
+.icon{
+    width: 50px;
+}

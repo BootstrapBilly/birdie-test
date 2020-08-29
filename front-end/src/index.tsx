@@ -10,10 +10,12 @@ import { Provider } from "react-redux"
 
 //reducers
 import apiReq from "./Store/Reducers/api_request_reducer"
+import currentFilter from "./Store/Reducers/current_filter_reducer"
 
 const rootReducer = combineReducers({ //combine all the state reducers into one root reducer
 
-  request: apiReq
+  request: apiReq,
+  filter:currentFilter
 
 })
 

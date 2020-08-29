@@ -10,11 +10,7 @@ type Props = {
     data: any
 }
 
-
-
 export const Row = ({ data }: Props) => {
-
-    if (data.payload.event_type === "general_observation") console.log(data)
 
     return (
 
